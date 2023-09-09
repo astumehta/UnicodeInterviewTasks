@@ -1,9 +1,13 @@
 import 'dart:typed_data';
 
-import 'package:example/weather.dart';
+import 'package:example/Currency_Converter_Material_Page.dart';
+import 'package:example/city.dart';
+import 'package:example/contactinfo.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+
 class ContactsScreen extends StatefulWidget {
   const ContactsScreen({super.key});
 
@@ -17,7 +21,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
   
   @override
   void initState() {
-    // TODO: implement initState
+    
     super.initState();
     getPhoneData();
   }
@@ -37,10 +41,11 @@ class _ContactsScreenState extends State<ContactsScreen> {
 @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      
 appBar: AppBar(
   title: const Text("Contacts",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
   toolbarHeight: 50,
-  backgroundColor: Colors.amber,
+  backgroundColor: Colors.lightGreen[300],
 ),
 
 bottomNavigationBar: Container(
@@ -53,10 +58,18 @@ bottomNavigationBar: Container(
             
             padding: const EdgeInsets.all(20),
             tabs: [
-            GButton(icon: Icons.person,text: "Weather",onPressed: () {
+            GButton(icon: Icons.water_drop,text: "",onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const WeatherScreen()),
+              MaterialPageRoute(builder: (context) => const City11()),
+            );
+        
+          
+          },),
+          GButton(icon: Icons.attach_money,text: "",onPressed:() {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const CurrencyConverterMaterialPage()),
             );
         
           
@@ -74,13 +87,27 @@ bottomNavigationBar: Container(
         ),
       ),
 
-body: (contacts==null)? const Center(child: CircularProgressIndicator()):ListView.builder(
-  itemCount: contacts!.length,
-  itemBuilder: (BuildContext context, int index) {
-    Uint8List? image=contacts![index].photo;
-  return ListTile(
+body: (contacts==null)? const Center(
+  child: CircularProgressIndicator()):ListView.builder(
+        itemCount: contacts!.length,
+        itemBuilder: (BuildContext context, int index) {
+        Uint8List? image=contacts![index].photo;
+    String number= (contacts![index].phones.isNotEmpty)? contacts![index].phones.first.number : "--";
+    String name1= (contacts![index].name.first.isNotEmpty)? contacts![index].name.first : "--";
+    String email= (contacts![index].emails.isNotEmpty)? contacts![index].emails.toString() : "email: --";
+    return ListTile(
     leading: (image==null)? const CircleAvatar(child: Icon(Icons.person),):CircleAvatar(backgroundImage: MemoryImage(image),),
-title: Text(contacts![index].name.first),
+title: Text(name1),
+subtitle: Text(number),
+onTap: () {
+  Navigator.push(context, MaterialPageRoute(builder: (context) =>ContactInfo(name1: name1,number: number,image: image,email: email,) ));
+  setState(() {
+    number= (contacts![index].phones.isNotEmpty)? contacts![index].phones.first.number : "--";
+    name1= (contacts![index].name.first.isNotEmpty)? contacts![index].name.first : "--";
+    email= (contacts![index].emails.isNotEmpty)? contacts![index].emails.toString():"email: --";
+  });
+},
+
   );
 },),
 

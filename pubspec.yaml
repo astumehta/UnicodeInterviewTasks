@@ -68,6 +68,11 @@ flutter:
     - images/dark.jpg
     - images/giphy.gif
     - images/R.gif
+    - images/rain.jpg
+    - images/sunny-sky-background-10570370.webp
+    - images/loading.png
+    - images/istockphoto-1310822348-612x612.jpg
+    - images/9481483-scattered-clouds-on-blue-sky.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

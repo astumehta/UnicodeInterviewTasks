@@ -1,6 +1,9 @@
 // ignore_for_file: unused_import
 
+import 'package:example/Currency_Converter_Material_Page.dart';
+import 'package:example/city.dart';
 import 'package:example/contactsscreen.dart';
+import 'package:example/model/weathermodel.dart';
 import 'package:example/profilescreen.dart';
 import 'package:example/weather.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +27,7 @@ class _ProfileScreenState extends State<welcomeBack> {
     // TODO: implement build
     
     return Scaffold(
-        backgroundColor:Colors.amber ,
+        backgroundColor:Colors.lightGreen[300] ,
         appBar: AppBar(
           
           
@@ -44,19 +47,26 @@ class _ProfileScreenState extends State<welcomeBack> {
             gap: 7,
             activeColor: Colors.white,
             
-            
             padding: const EdgeInsets.all(20),
             tabs: [
-            GButton(icon: Icons.person,text: "Weather",onPressed: () {
+            GButton(icon: Icons.water_drop,text: "",onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const WeatherScreen()),
+              MaterialPageRoute(builder: (context) =>  const City11()),
+            );
+        
+          
+          },),
+          GButton(icon: Icons.attach_money,text: "",onPressed:() {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const CurrencyConverterMaterialPage()),
             );
         
           
           },),
             
-            GButton(icon: Icons.phone,text: "Contacts",onPressed:() {
+            GButton(icon: Icons.phone,text: "",onPressed:() {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const ContactsScreen()),
@@ -71,9 +81,9 @@ class _ProfileScreenState extends State<welcomeBack> {
         body: 
               // ignore: prefer_const_constructors
               Column(
-                children: const [
+                children:  [
                   
-                  Row(
+                  const Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -101,7 +111,21 @@ SizedBox(height: 40,),
                     ),
                                      
                   ],
-                    )
+                    ),
+                    ElevatedButton(onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const LoginPage()),
+            );
+            
+        
+          
+          },style: const ButtonStyle(
+            backgroundColor: MaterialStatePropertyAll(Colors.black),
+            fixedSize: MaterialStatePropertyAll(Size(70, 50)),
+            shape: MaterialStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10)))) 
+          ) ,child: const Text("Logout",style: TextStyle(fontFamily: "Lucida",fontSize: 10),)
+          ),
                 ],
              
               

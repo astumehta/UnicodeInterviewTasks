@@ -1,5 +1,10 @@
+
+import 'package:example/main.dart';
 import 'package:example/profilescreen.dart';
+
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -8,6 +13,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+ 
   bool passsecure=true;
   String name="abc";
   String email="xyz@gmail.com";
@@ -19,16 +25,13 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.amber[300],
+      backgroundColor: Colors.lightGreen[300],
       appBar: AppBar(
-          toolbarHeight: 120,
-          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.elliptical(70, 60))),
+          toolbarHeight: 100,
+          title: const Text("ALLINONE",textAlign: TextAlign.right,style: TextStyle(fontSize: 30,),),
+          
           backgroundColor: Colors.black,
-          actions: const <Widget>
-          [
-            Text("HELP",style: TextStyle(fontStyle: FontStyle.normal,fontSize: 15,fontWeight: FontWeight.bold),),
-            
-          ],
+          
       ),
       
       
@@ -116,8 +119,10 @@ class _LoginPageState extends State<LoginPage> {
                       
           ),
           const SizedBox(height: 10,),
-          TextField(obscureText: passsecure,
+          TextField(
+            obscureText: passsecure,
                       controller: z,
+                    
                       style: const TextStyle(
                                color: Color.fromRGBO(0,0,0,1),
                                             ),
@@ -163,22 +168,37 @@ class _LoginPageState extends State<LoginPage> {
                       
           ),
           const SizedBox(height: 30,),
-          ElevatedButton(onPressed: () {
-
-
+          
+          ElevatedButton(onPressed: ()  async {
             
             
+            var sharedpref= await SharedPreferences.getInstance();
+            sharedpref.setBool(SplashScreenState.KEYLOGIN, true);
+
+
             setState(() {
             name=xhh.text;
             email=y.text;
             password=z.text;
+            
           });
-          // ignore: use_build_context_synchronously
-          Navigator.push(
-
+          if(xhh.text=="" || y.text=="" || z.text=="")
+          {
+            
+            Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ProfileScreen(name: name,email: email,)),
+              MaterialPageRoute(builder: (context) => const LoginPage()),
             );
+            
+            
+          }
+          else{
+           
+           Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProfileScreen(name: name, email: email,)),
+            );}
+          
           },
           style: const ButtonStyle(
               backgroundColor: MaterialStatePropertyAll(Colors.black),

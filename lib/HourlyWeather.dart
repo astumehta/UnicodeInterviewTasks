@@ -3,10 +3,14 @@ class HourlyWeather extends StatelessWidget {
   final IconData icon1;
   final String time;
   final String temp;
-  const HourlyWeather({super.key,required this.icon1,required this.time,required this.temp});
+  final String degree;
+  
+  
+  const HourlyWeather({super.key,required this.icon1,required this.time,required this.temp,required this.degree});
 
   @override
   Widget build(BuildContext context) {
+    
     return SizedBox(
               
               height: 140,
@@ -21,7 +25,7 @@ class HourlyWeather extends StatelessWidget {
                       const SizedBox(height: 12,),
                       Icon(icon1,
                       size: 35,),
-                      Text(temp,style: const TextStyle(fontSize: 15,fontWeight: FontWeight.normal),)
+                      Text(temp+degree,style: const TextStyle(fontSize: 15,fontWeight: FontWeight.normal),)
             
                   ],
                 ),

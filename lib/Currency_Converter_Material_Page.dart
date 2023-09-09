@@ -1,7 +1,9 @@
 
-// ignore_for_file: prefer_const_literals_to_create_immutables, duplicate_ignore
+import 'package:example/city.dart';
+import 'package:example/contactsscreen.dart';
 
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 class CurrencyConverterMaterialPage extends StatefulWidget
 {
@@ -19,8 +21,8 @@ extends State<CurrencyConverterMaterialPage>
   @override
   Widget build(BuildContext context)
   { 
-    print("Rebuilt");
-    // ignore: unused_local_variable
+    
+    
   
     
     const border= OutlineInputBorder(
@@ -36,13 +38,51 @@ extends State<CurrencyConverterMaterialPage>
                                                              
                                                              );
     return Scaffold
-      ( backgroundColor: const Color.fromARGB(255, 165, 234, 130),
-        // ignore: duplicate_ignore, duplicate_ignore
+      ( backgroundColor: Colors.lightGreen[300],
+        
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 165, 234, 130),
+          backgroundColor: const Color.fromARGB(255, 0, 0, 0),
           elevation: 0,
-          title: const Text("USD to INR",style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),),
+          title: const Text("USD to INR",style: TextStyle(color: Colors.white),),
         ),
+        bottomNavigationBar: Container(
+        color: Colors.black,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          child: GNav(
+            gap: 7,
+            activeColor: Colors.white,
+            
+            padding: const EdgeInsets.all(20),
+            tabs: [
+            GButton(icon: Icons.water_drop,text: "",onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const City11()),
+            );
+        
+          
+          },),
+          GButton(icon: Icons.attach_money,text: "Currency",onPressed:() {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const CurrencyConverterMaterialPage()),
+            );
+        
+          
+          },),
+            
+            GButton(icon: Icons.phone,text: "",onPressed:() {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ContactsScreen()),
+            );
+        
+          
+          }),
+          ],backgroundColor: Colors.black,),
+        ),
+      ),
         body: Center(
           // ignore: prefer_const_literals_to_create_immutables
           child: Column(
@@ -126,13 +166,13 @@ extends State<CurrencyConverterMaterialPage>
                       },
                       style: const ButtonStyle(
                         elevation: MaterialStatePropertyAll(double.maxFinite),
-                        backgroundColor: MaterialStatePropertyAll(Color.fromARGB(255, 198, 75, 8)),
+                        backgroundColor: MaterialStatePropertyAll(Color.fromARGB(255, 0, 0, 0)),
                         foregroundColor: MaterialStatePropertyAll(Colors.black),
                         fixedSize: MaterialStatePropertyAll(Size(double.maxFinite, 50),),
                         shape: MaterialStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))))
                         
                                         ),
-                      child: const Text("Click Me To Convert to INR"),
+                      child: const Text("Click Me To Convert to INR",style: TextStyle(color: Colors.white),),
                           
                           
                           ),
