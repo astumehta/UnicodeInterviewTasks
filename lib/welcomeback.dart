@@ -90,12 +90,11 @@ class _ProfileScreenState extends State<welcomeBack> {
                     Column(
                       children: [
                         SizedBox(height: 60,),
-                        Text("",style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,color: Colors.black,fontFamily: 'Lucida',),),
+                        //Text("",style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,color: Colors.black,fontFamily: 'Lucida',),),
                         SizedBox(height: 20,),
                         CircleAvatar(
                                     radius: 130,
                                     backgroundImage: AssetImage('images/blank.jpg'),
-                                    
                                           ),
                          SizedBox(height: 20,),
                                       Text("Enjoy using our App!",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,color: Colors.black),),
@@ -103,7 +102,7 @@ class _ProfileScreenState extends State<welcomeBack> {
                                       Text("Please continue",style: TextStyle(color: Colors.black),),
                                       
                           
-SizedBox(height: 40,),
+                      SizedBox(height: 40,),
                         
                       ],
 
@@ -117,8 +116,6 @@ SizedBox(height: 40,),
               context,
               MaterialPageRoute(builder: (context) => const LoginPage()),
             );
-            
-        
           
           },style: const ButtonStyle(
             backgroundColor: MaterialStatePropertyAll(Colors.black),

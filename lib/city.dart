@@ -83,8 +83,8 @@ class _CityState extends State<City11> {
                                                         color: Color.fromRGBO(0,0,0,1),
                                                        ),
                                    // ignore: prefer_const_constructors
-                                   prefixIcon: Icon(Icons.person_2_rounded),
-                                   prefixIconColor: Color.fromRGBO(24, 49, 24, 1),                   
+                                   prefixIcon: Icon(Icons.location_on),
+                                   prefixIconColor: Color.fromRGBO(255, 0, 0, 1),                   
                                    filled: true,
                                    fillColor: Color.fromRGBO(255,255,255,1),
                                    
@@ -190,6 +190,7 @@ class _CityState extends State<City11> {
               style: const ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(Color.fromARGB(255, 89, 85, 85)),
                 fixedSize: MaterialStatePropertyAll(Size(double.maxFinite, 50)),
+                
                 
               ), child: const Text("London",style: TextStyle(color: Colors.black),textAlign: TextAlign.left,)
               ),

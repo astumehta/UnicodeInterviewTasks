@@ -99,9 +99,9 @@ backdrop="images/rain.jpg";
     {
       backdrop="images/istockphoto-1310822348-612x612.jpg";
     }
-    if(backdropdescription=="broken clouds")
+    else
     {
-      backdrop="images/9481483-scattered-clouds-on-blue-sky.jpg";
+      backdrop="images/cloud.jpg";
     }
   }
 
@@ -231,7 +231,7 @@ backdrop="images/rain.jpg";
                 //gap
                 const SizedBox(height: 10,),
             
-                const Align(alignment: Alignment.centerLeft,child: Text("Weather forecast",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),),
+                const Align(alignment: Alignment.centerLeft,child: Text("Weather forecast",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Color.fromARGB(255, 255, 255, 255)),),),
 
             
                 const SizedBox(height: 20,),
@@ -240,6 +240,7 @@ backdrop="images/rain.jpg";
                 
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
+                
                 child: Row(
                   
                   children: [
@@ -251,7 +252,6 @@ backdrop="images/rain.jpg";
                     HourlyWeather(time: "09:00",icon1: Icons.water_drop_sharp,temp: t6.toString(),degree: "°C",),
                     HourlyWeather(time: "12:00",icon1: Icons.cloud,temp: t7.toString(),degree: "°C",),
                     
-              
                   ],
                 ),
               )

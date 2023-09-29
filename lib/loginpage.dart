@@ -33,12 +33,6 @@ class _LoginPageState extends State<LoginPage> {
           backgroundColor: Colors.black,
           
       ),
-      
-      
-      
-      
-      
-      
       body: 
       Center(
         child: Padding(
@@ -47,7 +41,8 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 const SizedBox(height: 30,),
                   const Align
-                  (alignment: Alignment.centerLeft,
+                  (
+                    alignment: Alignment.centerLeft,
                     child: Text("Create Your Account",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.black),)),
                   const SizedBox(height: 20,),
                   
@@ -91,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                                color: Color.fromRGBO(0,0,0,1),
                                             ),
                       decoration: 
-                          const InputDecoration   (
+                           const InputDecoration   (
                                hintText: "Enter Your Email Address",
                                hintStyle: TextStyle(
                                                     color: Color.fromRGBO(0,0,0,1),
@@ -101,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                                prefixIconColor: Color.fromRGBO(24, 49, 24, 1),                   
                                filled: true,
                                fillColor: Color.fromRGBO(255,255,255,1),
-                               
+                               suffixText: "Ex:abc@gmail.com",
                                focusedBorder: OutlineInputBorder(
                                                 
                                                 borderSide: BorderSide(
@@ -136,6 +131,7 @@ class _LoginPageState extends State<LoginPage> {
                                // ignore: prefer_const_constructors
                                prefixIcon: Icon(Icons.lock),
                                
+                               
                                suffixIcon: GestureDetector(
                                 onTap: () {
                                   setState(() {
@@ -147,7 +143,7 @@ class _LoginPageState extends State<LoginPage> {
                                 Icons.visibility_off:Icons.visibility
                                 ),
                                ),
-                               prefixIconColor: const Color.fromRGBO(24, 49, 24, 1),                   
+                               prefixIconColor: const Color.fromARGB(255, 0, 0, 0),                   
                                filled: true,
                                fillColor: const Color.fromRGBO(255,255,255,1),
                                
@@ -196,7 +192,7 @@ class _LoginPageState extends State<LoginPage> {
            
            Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ProfileScreen(name: name, email: email,)),
+              MaterialPageRoute(builder: (context) => ProfileScreen(name: name.toUpperCase(), email: email,)),
             );}
           
           },
@@ -223,24 +219,12 @@ class _LoginPageState extends State<LoginPage> {
             shape: MaterialStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))))
           ), child: const Text("Reset"))
 
-          ],
-              
-              
-              
-              
-              
-              
+          ],  
               
           ),
         ),
       )
       
-      
-
-
-
-
-
 
     );
   }

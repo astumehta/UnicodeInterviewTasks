@@ -45,8 +45,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class SplashScreenState extends State<SplashScreen> {
-  //get finalemail => null;
-  // ignore: constant_identifier_names
+  
   static const String KEYLOGIN = "login";
   @override
   void initState() {
@@ -54,15 +53,6 @@ class SplashScreenState extends State<SplashScreen> {
       wheretogo();
   }
 
-
-  //Future getValidation() async 
-  //{
-    //final SharedPreferences sharedPreferences= await SharedPreferences.getInstance();
-    //  var obtainedemail=sharedPreferences.getString("email");
-    //  setState(() {
-      //  var finalemail=obtainedemail;
-      //});
-  //}
   @override
   Widget build(BuildContext context) {
     return const Scaffold(

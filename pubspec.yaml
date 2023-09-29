@@ -73,6 +73,8 @@ flutter:
     - images/loading.png
     - images/istockphoto-1310822348-612x612.jpg
     - images/9481483-scattered-clouds-on-blue-sky.jpg
+    - images/desktop-wallpaper-clouds-blue-sky-with-few-clouds-background-dark-blue-clouds.jpg
+    - images/cloud.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -160,7 +160,7 @@ extends State<CurrencyConverterMaterialPage>
                       {
                         
                         setState(() {
-                          result=double.parse(blah.text)*81;
+                          result=double.parse(blah.text)*83.12;
                           
                         });
                       },

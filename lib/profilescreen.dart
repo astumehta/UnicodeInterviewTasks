@@ -24,7 +24,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   // ignore: dead_code
   Widget build(BuildContext context) {
-    // TODO: implement build
+    
     
     return Scaffold(
         backgroundColor:Colors.lightGreen[300] ,
@@ -35,7 +35,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
           backgroundColor: Colors.black,
           actions: <Widget>
           [
-   
           IconButton(onPressed: (){}, icon:const Icon(Icons.refresh),color: const Color.fromARGB(255, 255, 255, 255), ),
           ]        
       ),
@@ -87,9 +86,6 @@ const SizedBox(height: 40,),
               context,
               MaterialPageRoute(builder: (context) => const LoginPage()),
             );
-            
-        
-          
           },style: const ButtonStyle(
             backgroundColor: MaterialStatePropertyAll(Colors.black),
             fixedSize: MaterialStatePropertyAll(Size(70, 50)),

@@ -89,7 +89,7 @@ bottomNavigationBar: Container(
 
 body: (contacts==null)? const Center(
   child: CircularProgressIndicator()):ListView.builder(
-        itemCount: contacts!.length,
+        itemCount: contacts?.length??0,
         itemBuilder: (BuildContext context, int index) {
         Uint8List? image=contacts![index].photo;
     String number= (contacts![index].phones.isNotEmpty)? contacts![index].phones.first.number : "--";
